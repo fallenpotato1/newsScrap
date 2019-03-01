@@ -7,6 +7,7 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
 function findThisBitch(thisBitch){
+    gamingItem.create(thisBitch)
     gamingItem.find({title: thisBitch.title}, function(err, bitch) {
         if(bitch) {
             return console.log("this bitch exists")
