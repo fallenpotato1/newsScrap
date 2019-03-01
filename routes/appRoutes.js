@@ -4,8 +4,8 @@ var theData = require("./scraper")
 var gamingItem = require("../models/createLink")
 var mongoose = require("mongoose")
 
-mongoose.connect("mongodb://localhost/gamingList", { useNewUrlParser: true })
-
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
+mongoose.connect(MONGODB_URI)
 
 router.get("/", function(req, res) {
     theData.returnData()
