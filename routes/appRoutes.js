@@ -5,7 +5,7 @@ var gamingItem = require("../models/createLink")
 var mongoose = require("mongoose")
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
 router.get("/", function(req, res) {
     theData.returnData()
