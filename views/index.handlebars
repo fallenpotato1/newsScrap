@@ -1,0 +1,12 @@
+{{#each thing}}
+<div class="theGames"></div>
+<a href={{this.link}}><ul class="gameItem">
+    <li>
+        <strong><h3>{{this.title}}</h3></strong>
+    </li>
+    <li>
+        {{this.summary}}
+    </li>
+</ul>
+</a>
+{{/each}}
