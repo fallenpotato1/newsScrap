@@ -8,11 +8,11 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
 function findThisBitch(thisBitch){
     gamingItem.find({title: thisBitch.title}, function(err, bitch) {
-        if(err) {
-            gamingItem.create(thisBitch)
-            return console.log("this bitch didnt exist" + thisBitch.title)
-        }
+        if(bitch) {
             console.log("this bitch exists")
+        }
+        gamingItem.create(thisBitch)
+        return console.log("this bitch didnt exist" + thisBitch.title)
     })
 }
 
