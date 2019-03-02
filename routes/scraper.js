@@ -4,7 +4,7 @@ var mongoose = require("mongoose")
 var gamingItem = require("../models/createLink")
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
+mongoose.connect(MONGODB_URI)
 
 function findThisBitch(thisBitch){
     gamingItem.find({title: thisBitch.title}, function(err, bitch) {
