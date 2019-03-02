@@ -3,7 +3,6 @@ var router = express.Router()
 var theData = require("./scraper")
 var gamingItem = require("../models/createLink")
 var mongoose = require("mongoose")
-theData.returnData()
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })

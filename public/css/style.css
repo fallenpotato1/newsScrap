@@ -1,9 +1,4 @@
 body {
-    background-image: url("../images/smash-im.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 100;
     display: flex;
     flex-direction: column;
     background-color: rgb(58, 27, 195)
@@ -23,6 +18,11 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: row;
+    background-image: url("../images/smash-im.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100;
 }
 
 .bottom{

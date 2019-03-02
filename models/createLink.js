@@ -10,6 +10,9 @@ var aRow = new Schema({
     },
     summary: {
         type: String
+    },
+    id: {
+        type: mongoose.Types.ObjectId
     }
 })
 const gamingItem = mongoose.model("rows", aRow)

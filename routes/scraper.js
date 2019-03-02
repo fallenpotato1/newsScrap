@@ -8,12 +8,25 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
 function findThisBitch(thisBitch){
     gamingItem.find({title: thisBitch.title}, function(err, bitch) {
-        if(bitch) {
-            return console.log("this bitch exists")
+        let {title, summary, link} = thisBitch
+        console.log(thisBitch.title)
+        if(!bitch.title) {
+            let anotherThing = {
+                title, 
+                summary,
+                link
+            }
+            console.log(anotherThing)
+            return gamingItem.create({
+                title: anotherThing.title,
+                summary: anotherThing.summary,
+                link: anotherThing.link
+            }, function(err, res) {
+                console.log("created")
+            })
         }
-        gamingItem.create(thisBitch)
-        return console.log("this bitch didnt exist" + thisBitch.title)
-    })
+        console.log("existed already")
+})
 }
 
 var theData = {
