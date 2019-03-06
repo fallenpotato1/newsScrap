@@ -31,6 +31,7 @@ function findThisBitch(thisBitch){
 
 var theData = {
     returnData: function () {
+        console.log("i got here")
         axios.get("https://www.gamespot.com/news/").then(function (response) {
             var $ = cheerio.load(response.data)
             $(".media-article").each(function (i, element) {
