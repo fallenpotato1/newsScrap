@@ -3,6 +3,10 @@ var PORT = process.env.PORT || 3000
 var app = express()
 var exphbs = require("express-handlebars")
 var router = require("./routes/appRoutes")
+var theData = require("./routes/scraper")
+
+theData.returnData()
+
 
 app.use(express.static("public"))
 

@@ -8,7 +8,6 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
 router.get("/", function(req, res) {
-    theData.returnData()
     gamingItem.find({}, function(err, docs) {
         res.render("index", {thing: docs})
     })
