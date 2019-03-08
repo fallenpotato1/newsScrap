@@ -18,11 +18,6 @@ h1 {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-image: url("../images/smash-im.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: 100;
 }
 
 .bottom{
@@ -69,4 +64,11 @@ strong {
 }
 li {
     height: 50%;
+}
+.centerCenter {
+    background-image: url("../images/smash-im.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100;
 }
