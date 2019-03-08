@@ -19,7 +19,7 @@ function findThisBitch(thisBitch){
                 title: anotherThing.title,
                 summary: anotherThing.summary,
                 link: anotherThing.link
-            }, function(err, res) {
+            }, function(err) {
                 if(err) {
                     throw err
                 }
