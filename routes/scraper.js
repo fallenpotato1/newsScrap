@@ -7,11 +7,8 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 
 function findThisBitch(thisBitch){
-    console.log("did get here")
     gamingItem.find({title: thisBitch.title}, function(err, bitch) {
-        console.log("got here")
         let {title, summary, link} = thisBitch
-        console.log(thisBitch.title)
         if(!bitch.title) {
             let anotherThing = {
                 title, 
@@ -23,15 +20,16 @@ function findThisBitch(thisBitch){
                 summary: anotherThing.summary,
                 link: anotherThing.link
             }, function(err, res) {
+                if(err) {
+                    throw err
+                }
             })
         }
-        console.log("existed already")
 })
 }
 
 var theData = {
     returnData: function () {
-        console.log("i got here")
         axios.get("https://www.gamespot.com/news/").then(function (response) {
             var $ = cheerio.load(response.data)
             $(".media-article").each(function (i, element) {

@@ -6,11 +6,13 @@ var mongoose = require("mongoose")
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/gamingList";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
-theData.returnData()
 
 router.get("/", function(req, res) {
-    console.log("hi")
     gamingItem.find({}, function(err, docs) {
+        if(err) {
+            throw err
+        }
+        theData.returnData()
         res.render("index", {thing: docs})
     })
 })
